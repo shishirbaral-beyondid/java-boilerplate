@@ -1,0 +1,32 @@
+server:
+    port: 8000
+    error:
+      whitelabel:
+        enabled: false
+spring:
+    jackson:
+        serialization:
+            write-dates-as-timestamps: false
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    com.okta.okta.spring.example.interceptor: DEBUG
+
+#Okta configuration for spring
+
+okta:
+  client:
+    org-url: https://yourdomail.com
+    token: apiToken
+  oauth2:
+    issuer: https://yourdomail.com/oauth2/default
+    audience: api://default
+    client-id: clientId
+    client-secret: client-secretId
+    redirect-uri: http://localhost:8080/callback
+security:
+  oauth2:
+    client:
+      user-authorization-uri:  http://localhost:${server.port}/login
