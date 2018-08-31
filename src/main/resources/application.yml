@@ -1,9 +1,13 @@
+
 server:
     port: 8000
     error:
       whitelabel:
         enabled: false
 spring:
+    data:
+      rest:
+        basePath: /api/v1
     jackson:
         serialization:
             write-dates-as-timestamps: false
@@ -18,13 +22,13 @@ logging:
 
 okta:
   client:
-    org-url: https://yourdomail.com
-    token: apiToken
+    org-url: 
+    token: 
   oauth2:
-    issuer: https://yourdomail.com/oauth2/default
+    issuer: https://dev-837622.oktapreview.com/oauth2/default
     audience: api://default
-    client-id: clientId
-    client-secret: client-secretId
+    client-id: 
+    client-secret: 
     redirect-uri: http://localhost:8080/callback
 security:
   oauth2:
